@@ -1,7 +1,9 @@
 # HIYA :3
 
-from textual.app import App
+from textual.app import App, ComposeResult, RenderResult
+from textual.widget import Widget
 from textual.events import Key
+
 
 class MainHub(App):
 
@@ -9,8 +11,15 @@ class MainHub(App):
         if event.key == "q":
             self.exit()
 
-    def on_mount(self):
-        self.screen.styles.background = "hotpink"
+    def compose(self):
+        yield MainPage()
+
+
+class MainPage(Widget):
+
+    def render(self) -> RenderResult:
+        return "Hello, [b]World[/b]!"
+
 
 if __name__ == "__main__":
     
