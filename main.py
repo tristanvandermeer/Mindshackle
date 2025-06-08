@@ -1,5 +1,7 @@
 # HIYA :3
 
+# This is on hiatus while I deal with stage 1
+
 from textual.app import App, ComposeResult, RenderResult
 from textual.widget import Widget
 from textual.events import Key
